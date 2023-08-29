@@ -1,0 +1,103 @@
+unit Prueba;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, Menus, ExtCtrls;
+
+type
+  TPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    AdministradordeGarantas1: TMenuItem;
+    AdministradordeControles1: TMenuItem;
+    InformeMensualViga1: TMenuItem;
+    Salir1: TMenuItem;
+    Clientes1: TMenuItem;
+    Datos1: TMenuItem;
+    Localidades1: TMenuItem;
+    Artculos1: TMenuItem;
+    Acercade1: TMenuItem;
+    procedure AdministradordeGarantas1Click(Sender: TObject);
+    procedure AdministradordeControles1Click(Sender: TObject);
+    procedure InformeMensualViga1Click(Sender: TObject);
+    procedure Salir1Click(Sender: TObject);
+    procedure Clientes1Click(Sender: TObject);
+    procedure Localidades1Click(Sender: TObject);
+    procedure Artculos1Click(Sender: TObject);
+    procedure Acercade1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Principal: TPrincipal;
+  Egar, Econtrol, Econsulta, Eusuario, Elocalidad, Earticulo, Eacerca : 0..1 ;
+implementation
+
+uses Unigar, Ctrl, Consulta, Programa, Usuarios, Localida, Articulo,
+  Acercade;
+
+{$R *.DFM}
+
+procedure TPrincipal.AdministradordeGarantas1Click(Sender: TObject);
+begin
+       {if FormuG.tag = 0 then
+       begin}
+        FormuG := TFormuG.Create(Application);
+        formuG.tag := 1;
+       {end;}
+       FormuG.Show;
+       FormuG.Update;
+end;
+
+procedure TPrincipal.AdministradordeControles1Click(Sender: TObject);
+begin
+       ControlForm := TControlForm.Create(Application);
+       Controlform.show;
+       Controlform.update;
+end;
+
+procedure TPrincipal.InformeMensualViga1Click(Sender: TObject);
+begin
+       Fconsu := TFConsu.Create(Application);
+       Fconsu.show;
+       FConsu.Update;
+end;
+
+procedure TPrincipal.Salir1Click(Sender: TObject);
+begin
+        application.Terminate; 
+end;
+
+procedure TPrincipal.Clientes1Click(Sender: TObject);
+begin
+        FUsuarios := TFUsuarios.create(Application);
+        FUsuarios.show;
+        FUsuarios.Update;
+end;
+
+procedure TPrincipal.Localidades1Click(Sender: TObject);
+begin
+        FLocali := TFLocali.create(Application);
+        FLocali.show;
+        FLocali.Update;
+end;
+
+procedure TPrincipal.Artculos1Click(Sender: TObject);
+begin
+        Farti := TFarti.create(Application);
+        Farti.show;
+        Farti.Update;
+end;
+
+procedure TPrincipal.Acercade1Click(Sender: TObject);
+begin
+        AboutBox := TAboutBox.create(Application);
+        AboutBox.show;
+        AboutBox.Update;
+end;
+
+end.

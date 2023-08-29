@@ -1,0 +1,6 @@
+SELECT DISTINCT D2.Tipo, D2.factunum, D2.fechafactu, D2.total,D2.TPagado, D1.PAGADO, D1.Factura
+FROM "ORDPAGOS.DB" D, "TempList.DB" D1, "COMPRAS.DB" D2
+WHERE
+(D1.Orden = D.Codigo)
+ AND (D2.Codigo = D1.Factura)
+ORDER BY D2.Tipo, D2.factunum, D2.fechafactu, D2.total

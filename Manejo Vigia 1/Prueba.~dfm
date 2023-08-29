@@ -1,0 +1,59 @@
+object Principal: TPrincipal
+  Left = 282
+  Top = 127
+  Width = 480
+  Height = 398
+  Caption = 'Administrador de Equipos Vigía - Versión 1.0'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 336
+    Top = 8
+    object Datos1: TMenuItem
+      Caption = 'Datos'
+      object Clientes1: TMenuItem
+        Caption = 'Usuarios'
+        OnClick = Clientes1Click
+      end
+      object Localidades1: TMenuItem
+        Caption = 'Localidades'
+        OnClick = Localidades1Click
+      end
+      object Artculos1: TMenuItem
+        Caption = 'Artículos'
+        OnClick = Artculos1Click
+      end
+    end
+    object AdministradordeGarantas1: TMenuItem
+      Caption = '&Garantías'
+      OnClick = AdministradordeGarantas1Click
+    end
+    object AdministradordeControles1: TMenuItem
+      Caption = '&Controles'
+      OnClick = AdministradordeControles1Click
+    end
+    object InformeMensualViga1: TMenuItem
+      Caption = 'Informe Mensual Vigía'
+      OnClick = InformeMensualViga1Click
+    end
+    object Acercade1: TMenuItem
+      Caption = 'Acerca de...'
+      OnClick = Acercade1Click
+    end
+    object Salir1: TMenuItem
+      Caption = 'Salir'
+      OnClick = Salir1Click
+    end
+  end
+end

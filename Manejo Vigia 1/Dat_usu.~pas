@@ -1,0 +1,45 @@
+unit Dat_usu;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Db, DBTables;
+
+type
+  TDatos = class(TDataModule)
+    Usuarios: TTable;
+    DataUsu: TDataSource;
+    Localidad: TTable;
+    Datalocal: TDataSource;
+    Busqueda: TTable;
+    Databus: TDataSource;
+    UsuariosCodigo: TFloatField;
+    UsuariosNombre: TStringField;
+    UsuariosCodigoPostal: TSmallintField;
+    UsuariosDireccion: TStringField;
+    UsuariosTelefono: TStringField;
+    UsuariosCuit: TStringField;
+    UsuariosIva: TStringField;
+    UsuariosCondicionpago: TBooleanField;
+    UsuariosNotas: TMemoField;
+    LocalidadCodigoPostal: TSmallintField;
+    LocalidadLocalidad: TStringField;
+    BusquedaCodigo: TFloatField;
+    BusquedaNombre: TStringField;
+    BusquedaCodigoPostal: TSmallintField;
+    UsuariosnLocal: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Datos: TDatos;
+
+implementation
+
+{$R *.DFM}
+
+end.

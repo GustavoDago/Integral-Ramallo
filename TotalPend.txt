@@ -1,0 +1,5 @@
+SELECT DISTINCT sum(D.Total),sum(D.TPagado)
+FROM "COMPRAS.DB" D, "TEMPLIST.DB" D1
+WHERE
+(D1.Orden > 0)
+AND (D.Codigo = D1.Factura)

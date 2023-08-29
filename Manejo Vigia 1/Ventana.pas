@@ -1,0 +1,622 @@
+unit Ventana;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ExtCtrls, ComCtrls, DBCtrls, StdCtrls, Grids, DBGrids, DBCGrids, Mask,
+  ToolWin, ActnList, Menus, ImgList, Buttons;
+
+type
+  TFEquipos = class(TForm)
+    Paginas: TPageControl;
+    Usuarios: TTabSheet;
+    Articulos: TTabSheet;
+    Localidades: TTabSheet;
+    arbol: TTreeView;
+    Grillarti: TDBGrid;
+    GrillaLoca: TDBGrid;
+    Splitter1: TSplitter;
+    GrillaUsu: TDBGrid;
+    Splitter2: TSplitter;
+    ToolBar1: TToolBar;
+    nav: TDBNavigator;
+    ToolButton1: TToolButton;
+    Ordenar: TComboBox;
+    Buscador: TDBEdit;
+    ToolButton2: TToolButton;
+    Panelventanas: TPanel;
+    mostrador: TNotebook;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label3: TLabel;
+    Label10: TLabel;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBCheckBox1: TDBCheckBox;
+    DBMemo1: TDBMemo;
+    DBComboBox1: TDBComboBox;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    MART: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBEdit11: TDBEdit;
+    DBEdit12: TDBEdit;
+    DBEdit13: TDBEdit;
+    DBEdit14: TDBEdit;
+    DBEdit15: TDBEdit;
+    DBEdit16: TDBEdit;
+    Label21: TLabel;
+    Label22: TLabel;
+    Gar: TDBEdit;
+    Fecha: TDBEdit;
+    Label24: TLabel;
+    Label25: TLabel;
+    Label26: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
+    Label30: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    Label33: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Label36: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
+    Label40: TLabel;
+    Label41: TLabel;
+    DBEdit17: TDBEdit;
+    DBEdit20: TDBEdit;
+    DBEdit21: TDBEdit;
+    DBEdit22: TDBEdit;
+    DBEdit23: TDBEdit;
+    DBEdit24: TDBEdit;
+    DBEdit25: TDBEdit;
+    DBEdit26: TDBEdit;
+    DBEdit27: TDBEdit;
+    DBEdit28: TDBEdit;
+    DBEdit29: TDBEdit;
+    DBEdit30: TDBEdit;
+    DBEdit31: TDBEdit;
+    DBEdit32: TDBEdit;
+    DBEdit33: TDBEdit;
+    DBEdit34: TDBEdit;
+    DBEdit35: TDBEdit;
+    Label27: TLabel;
+    Label23: TLabel;
+    DBEdit19: TDBEdit;
+    DBLookupComboBox2: TDBLookupComboBox;
+    Label42: TLabel;
+    Label43: TLabel;
+    Label44: TLabel;
+    MCP: TDBEdit;
+    DBEdit36: TDBEdit;
+    DBComboBox2: TDBComboBox;
+    Panel2: TPanel;
+    DBText1: TDBText;
+    VART: TDBText;
+    VCP: TDBText;
+    ToolButton4: TToolButton;
+    MenUsu: TPopupMenu;
+    Usuarioyarbol1: TMenuItem;
+    ListadodeUsuarios1: TMenuItem;
+    Usuario1: TMenuItem;
+    ImageList1: TImageList;
+    BImprime: TToolButton;
+    MenuArti: TPopupMenu;
+    Menuinfo: TPopupMenu;
+    Artculo1: TMenuItem;
+    ListadodeArtculosxordenacin1: TMenuItem;
+    ListadoInforme: TMenuItem;
+    BRegistro: TBitBtn;
+    BGarantia: TBitBtn;
+    BControl: TBitBtn;
+    informe: TTabSheet;
+    DBGrid1: TDBGrid;
+    meses: TListBox;
+    Label45: TLabel;
+    actualizar: TButton;
+    Label46: TLabel;
+    MenuLoca: TPopupMenu;
+    ListadodeLocalidades1: TMenuItem;
+    procedure Hacearbol;
+    procedure FormActivate(Sender: TObject);
+    procedure navBeforeAction(Sender: TObject;
+      Button: TNavigateBtn);
+    procedure navClick(Sender: TObject; Button: TNavigateBtn);
+    procedure PaginasChange(Sender: TObject);
+    procedure arbolChange(Sender: TObject; Node: TTreeNode);
+    procedure arbolEnter(Sender: TObject);
+    procedure OrdenarChange(Sender: TObject);
+    procedure BuscadorChange(Sender: TObject);
+    procedure Usuario1Click(Sender: TObject);
+    procedure Usuarioyarbol1Click(Sender: TObject);
+    procedure ListadodeUsuarios1Click(Sender: TObject);
+    procedure BImprimeClick(Sender: TObject);
+    procedure Artculo1Click(Sender: TObject);
+    procedure ListadodeArtculosxordenacin1Click(Sender: TObject);
+    procedure ListadoInformeClick(Sender: TObject);
+    procedure BRegistroClick(Sender: TObject);
+    procedure BGarantiaClick(Sender: TObject);
+    procedure BControlClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure actualizarClick(Sender: TObject);
+    procedure mesesClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FEquipos: TFEquipos;
+  cambio: Longint = 1;
+  MenUsuItem, MenuArtiItem : TMenuItem;
+  anio,mesactual,dia : word;
+implementation
+
+uses Pdatos;
+
+{$R *.DFM}
+
+Procedure TFEquipos.Hacearbol;
+var nodo1: TTreeNode;
+begin
+{Procedimiento para crear un árbol de relaciones}
+With Datos, arbol.Items do begin
+
+        registro.MasterSource := DataUsu;
+        Registro.MasterFields := 'Codigo';
+        controles.MasterSource := DataReg;
+        controles.MasterFields := 'Codigo';
+        garantias.MasterSource := DataReg;
+        Garantias.MasterFields := 'Codigo';
+
+        Timer1.Enabled := False;
+        If Registro.RecordCount = 0 then
+                BRegistro.Visible := true
+        else
+                BRegistro.Visible := false;
+        Registro.first;
+
+        while not Registro.Eof do begin
+                nodo1 := Add(nil,RegistroCodigo.AsString  + ', ' +
+                                RegistroCodvigia.Value + ', ' +
+                                Registrovehiculo.value);
+                Garantias.First ;
+                while not Garantias.Eof do begin
+                        AddChild(nodo1,'Garantía = ' +
+                                Garantiasngarantia.AsString  + ', ' +
+                                garantiasfecompra.AsString);
+                        garantias.next;
+                end;
+                controles.First ;
+                while not controles.eof do begin
+                        AddChild(nodo1, 'Control = ' + ControlesOrden.AsString + ', ' +
+                        ControlesFecha.AsString );
+                        controles.next;
+                end;
+                Registro.next;
+        end;
+        controles.MasterFields := '';
+        controles.MasterSource := nil;
+        Garantias.MasterFields := '';
+        garantias.MasterSource := nil;
+        Registro.MasterFields := '';
+        registro.MasterSource := nil;
+end;
+end;
+
+procedure TFEquipos.FormActivate(Sender: TObject);
+begin
+        Datos.tag := 1;
+        MenUsuItem := Usuarioyarbol1;
+        MenuArtiItem := Artculo1;
+        DecodeDate(now, anio, mesactual, dia);
+        meses.ItemIndex := mesactual - 1;
+        Fequipos.mesesClick(self) ;
+end;
+
+procedure TFEquipos.navBeforeAction(Sender: TObject;
+  Button: TNavigateBtn);
+begin
+
+if (nav.DataSource = Datos.DataGar) and
+                 (Bgarantia.tag = 0) and (button = nbinsert ) then
+                 raise exception.Create('Existe sólo una garantía x cada registro');
+
+if (button = nbinsert) or (button = nbedit) then
+        begin
+              Paginas.enabled := false;
+              ordenar.enabled := false;
+              buscador.enabled := false;
+              BImprime.Enabled := false;
+              nav.VisibleButtons := [nbpost, nbcancel];
+        end;
+end;
+
+procedure TFEquipos.navClick(Sender: TObject;
+  Button: TNavigateBtn);
+begin
+if (button = nbpost) or (button = nbcancel) then
+        begin
+              PAginas.enabled := true;
+              ordenar.enabled := true;
+              BImprime.Enabled := true;
+              nav.VisibleButtons := [nbinsert,nbdelete, nbedit];
+              buscador.enabled := true;
+        end;
+end;
+
+procedure TFEquipos.PaginasChange(Sender: TObject);
+begin
+        if nav.Enabled = false then nav.Enabled := true;
+if paginas.activepage = Usuarios then
+        begin
+                nav.DataSource := datos.DataUsu ;
+                mostrador.ActivePage := 'Usuario';
+                Panel2.caption := 'Usuario';
+                BImprime.DropdownMenu := MenUsu;
+                BImprime.MenuItem :=  MenUsuItem;
+                with ordenar.Items, datos.Usuarios do begin
+                        Clear ;
+                        add('Código Usuario');
+                        add('Nombre');
+                        if IndexFieldNames = 'Codigo' then begin
+                                Ordenar.ItemIndex  := 0;
+                                Buscador.DataField := 'Codigo';
+                                end
+                        else begin
+                                ordenar.ItemIndex := 1;
+                                Buscador.DataField := 'Nombre';
+                                end;
+                end;
+                if Grillausu.Tag = 1 then begin                     {esta seccion permite}
+                        datos.Usuarios.AfterScroll(datos.Usuarios);  {leer desde el inicio}
+                        Grillausu.tag := 0;                         {el arbol}
+                end;
+        end;
+if paginas.ActivePage = Articulos then
+        begin
+                nav.DataSource := datos.Datarti ;
+                mostrador.ActivePage := 'Articulo';
+                Panel2.caption := 'Artículo';
+                BImprime.DropdownMenu := MenuArti;
+                BImprime.MenuItem :=  MenuArtiItem;
+                with ordenar.Items, Datos.Articulos do begin
+                        Clear ;
+                        add('Código Artículo');
+                        add('Descripción');
+                        if IndexFieldNames = 'Codiart' then begin
+                                Ordenar.ItemIndex  := 0;
+                                Buscador.DataField := 'Codiart';
+                                end
+                        else begin
+                                Ordenar.itemindex := 1;
+                                Buscador.DataField := 'Descripart';
+                                end;
+
+                end;
+
+        end;
+if  paginas.ActivePage = Localidades then
+        begin
+                nav.DataSource := datos.Dataloca;
+                mostrador.ActivePage := 'Localidades';
+                Panel2.caption := 'Localidad';
+                BImprime.DropdownMenu := MenuLoca;
+                BImprime.MenuItem :=  ListadodeLocalidades1;
+                with ordenar.Items, datos.Localidades do begin
+                        Clear ;
+                        add('Código Postal');
+                        add('Localidad');
+                        if IndexFieldNames = 'CodigoPostal' then begin
+                                Ordenar.ItemIndex  := 0;
+                                Buscador.DataField := 'CodigoPostal';
+                                end
+                        else begin
+                                Ordenar.itemindex := 1;
+                                buscador.DataField := 'Localidad';
+                                end;
+
+                end;
+        end;
+if paginas.activepage = informe then
+        begin
+                nav.Enabled := false;
+                mostrador.ActivePage := 'Informe';
+                Panel2.caption := 'Informe mensual de controles';
+                BImprime.DropdownMenu := Menuinfo;
+                BImprime.MenuItem :=  ListadoInforme;
+                with ordenar.Items, datos.Informe do begin
+                        Clear ;
+                        add('Fecha');
+                        add('Nombre');
+                        if IndexFieldNames = 'Fecha' then begin
+                                Ordenar.ItemIndex  := 0;
+                                Buscador.DataField := 'Fecha';
+                                end
+                        else begin
+                                ordenar.ItemIndex := 1;
+                                Buscador.DataField := 'Nombre';
+                                end;
+                end;
+        end;
+        BImprime.hint := BImprime.MenuItem.hint;
+end;
+
+procedure TFEquipos.arbolChange(Sender: TObject; Node: TTreeNode);
+var
+codigo1: double;
+codigo, code: integer;
+begin
+        if (activecontrol = Grillausu) and (arbol.tag = 0) then exit;
+        if pos('Control', Node.text) > 0 then begin
+                Val(copy(node.text, 10, pos(',', node.text) - 10),codigo, code);
+                with datos.controles do begin
+                        IndexFieldNames := 'orden';
+                        findnearest([codigo]);
+                        Indexfieldnames := 'Codigo';
+                end;
+                nav.DataSource := datos.DataControles ;
+                mostrador.ActivePage := 'Control';
+                Panel2.caption := 'Control';
+        end;
+        if pos('Garantía', Node.text) > 0 then begin
+                val(copy(node.text, 11, pos(',', node.text) - 11),codigo1,code);
+                with datos.Garantias do begin
+                        IndexFieldNames := 'nGarantia';
+                        findnearest([codigo1]);
+                        Indexfieldnames := 'Codigo';
+                end;
+                nav.DataSource := datos.DataGar  ;
+                mostrador.ActivePage := 'Garantia';
+                Panel2.caption := 'Garantía';
+        end;
+        if node.Level = 0 then begin
+                val(copy(node.text, 0, pos(',', node.text)),codigo,code);
+
+                with datos, datos.Registro do begin
+                        controles.MasterFields := 'Codigo'; {aquí se relaciona el registro}
+                        controles.MasterSource := DataReg;  {con su garantia y controles}
+                        Garantias.MasterFields := 'Codigo'; {para hacer visible o no}
+                        garantias.MasterSource := DataReg;  {los botones bcontrol y bGarantia}
+
+                        IndexFieldNames := 'codigo';
+                        findnearest([codigo]);
+                        Indexfieldnames := 'Comprador';
+                        if datos.Garantias.RecordCount = 0 then
+                                BGarantia.Visible := true
+                        else
+                                BGarantia.Visible := false;
+                        if datos.Controles.RecordCount = 0 then
+                                BControl.Visible := true
+                        else
+                                BControl.Visible := false;
+
+                        controles.MasterFields := '';         {aquí se rompe la relacion}
+                        controles.MasterSource := nil;        
+                        Garantias.MasterFields := '';         
+                        garantias.MasterSource := nil;
+                end;
+
+                nav.DataSource := datos.DataReg   ;
+                mostrador.ActivePage := 'Registro';
+                Panel2.caption := 'Registro';
+        end;
+end;
+
+procedure TFEquipos.arbolEnter(Sender: TObject);
+begin
+        if arbol.Items.Count = 0 then exit;
+        if arbol.Selected = nil then
+                FEquipos.arbolChange(self,arbol.TopItem)
+        else                                         
+                FEquipos.arbolChange(self,arbol.Selected);
+end;
+
+procedure TFEquipos.OrdenarChange(Sender: TObject);
+begin
+     case Ordenar.ItemIndex of
+           0 :
+             begin
+                if paginas.ActivePage = Usuarios then begin
+                        Datos.Usuarios.IndexFieldNames :=  'Codigo';
+                        Buscador.DataField := 'Codigo';
+                end;
+                if paginas.ActivePage = Articulos then begin
+                        Datos.Articulos.IndexFieldNames :=  'Codiart';
+                        Buscador.DataField := 'Codiart';
+                end;
+                if paginas.ActivePage = Localidades then begin
+                        Datos.Localidades.IndexFieldNames :=  'CodigoPostal';
+                        Buscador.DataField := 'CodigoPostal';
+                end;
+                if paginas.ActivePage = informe then begin
+                        datos.Informe.IndexFieldNames := 'Fecha';
+                        Buscador.datafield := 'Fecha';
+                end;
+             end;
+           1 :
+             begin
+                if paginas.ActivePage = Usuarios then begin
+                        Datos.Usuarios.IndexFieldNames :=  'Nombre';
+                        Buscador.DataField := 'Nombre';
+                end;
+                if paginas.ActivePage = Articulos then begin
+                        Datos.Articulos.IndexFieldNames :=  'Descripart';
+                        Buscador.DataField := 'Descripart';
+                end;
+                if paginas.ActivePage = Localidades then begin
+                        Datos.Localidades.IndexFieldNames :=  'localidad';
+                        Buscador.DataField := 'Localidad';
+                end;
+                if paginas.ActivePage = informe then begin
+                        datos.Informe.IndexFieldNames := 'Nombre';
+                        Buscador.DataField := 'Nombre';
+                end;
+
+             end;
+     end;
+     {fequipos.arbol.Items.Clear ;
+     fequipos.Hacearbol;}
+end;
+
+procedure TFEquipos.BuscadorChange(Sender: TObject);
+begin
+                if paginas.ActivePage = Usuarios then begin
+                        Datos.Usuarios.FindNearest([Buscador.text]) ;
+                        mostrador.ActivePage := 'Usuario';
+                        fequipos.arbol.Items.Clear ;
+                        Fequipos.hacearbol;
+                end;
+                if paginas.ActivePage = Articulos then
+                        Datos.Articulos.FindNearest([Buscador.text]) ;
+                if paginas.ActivePage = Localidades then
+                        Datos.Localidades.FindNearest([Buscador.text]);
+
+                if paginas.ActivePage = informe then
+                        Datos.informe.FindNearest([Buscador.text]);
+
+end;
+
+procedure TFEquipos.Usuario1Click(Sender: TObject);
+begin
+        BImprime.MenuItem := Usuario1;
+        MenUsuItem := Usuario1;
+        BImprime.Hint := 'Imprimir Usuario';
+end;
+
+procedure TFEquipos.Usuarioyarbol1Click(Sender: TObject);
+begin
+        BImprime.MenuItem := Usuarioyarbol1;
+        MenUsuItem := Usuarioyarbol1;
+        BImprime.Hint := 'Imprimir Usuario y árbol';
+end;
+
+procedure TFEquipos.ListadodeUsuarios1Click(Sender: TObject);
+begin
+        BImprime.MenuItem := ListadodeUsuarios1;
+        MenUsuItem := ListadodeUsuarios1;
+        BImprime.Hint := 'Imprimir Listado de Usuarios x ordenación';
+end;
+
+procedure TFEquipos.BImprimeClick(Sender: TObject);
+begin
+        BImprime.MenuItem.Click;
+end;
+
+procedure TFEquipos.Artculo1Click(Sender: TObject);
+begin
+        BImprime.MenuItem := Artculo1;
+        MenuArtiItem := Artculo1;
+        BImprime.Hint := 'Imprimir Artículo';
+end;
+
+procedure TFEquipos.ListadodeArtculosxordenacin1Click(Sender: TObject);
+begin
+        BImprime.MenuItem := ListadodeArtculosxordenacin1;
+        MenuArtiItem := ListadodeArtculosxordenacin1;
+        BImprime.Hint := 'Imprimir Listado de Artículos x ordenación';
+
+end;
+
+procedure TFEquipos.ListadoInformeClick(Sender: TObject);
+begin
+        BImprime.Hint := 'Imprimir Informe de Controles x ordenación';
+
+end;
+
+procedure TFEquipos.BRegistroClick(Sender: TObject);
+begin
+        BRegistro.tag := 1;
+        Bgarantia.visible := false;
+        BControl.Visible := false;
+        nav.DataSource := datos.Datareg;
+        Mostrador.ActivePage := 'Registro';
+        nav.BtnClick(nbInsert);
+end;
+
+procedure TFEquipos.BGarantiaClick(Sender: TObject);
+begin
+        BGarantia.tag := 1;
+        nav.DataSource := datos.DataGar;
+        Mostrador.ActivePage := 'Garantia';
+        nav.BtnClick(nbInsert);
+end;
+
+procedure TFEquipos.BControlClick(Sender: TObject);
+begin
+        BControl.tag := 1;
+        nav.DataSource := datos.DataControles ;
+        Mostrador.ActivePage := 'Control';
+        nav.BtnClick(nbInsert);
+end;
+
+procedure TFEquipos.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+        Datos.Busquedas.cancel;
+end;
+
+procedure TFEquipos.actualizarClick(Sender: TObject);
+begin
+        screen.Cursor := crHourGlass;
+        Datos.actualiza ;
+        screen.Cursor := crDefault;
+end;
+
+procedure TFEquipos.mesesClick(Sender: TObject);
+begin
+        with datos.Informe do begin
+        case meses.ItemIndex of
+                0 : Filter := 'Mes = ''1''';
+                1 : Filter := 'Mes = ''2''';
+                2 : Filter := 'Mes = ''3''';
+                3 : Filter := 'Mes = ''4''';
+                4 : Filter := 'Mes = ''5''';
+                5 : Filter := 'Mes = ''6''';
+                6 : Filter := 'Mes = ''7''';
+                7 : Filter := 'Mes = ''8''';
+                8 : Filter := 'Mes = ''9''';
+                9 : Filter := 'Mes = ''10''';
+               10 : Filter := 'Mes = ''11''';
+               11 : Filter := 'Mes = ''12''';
+        end;
+        end;
+end;
+
+procedure TFEquipos.FormCreate(Sender: TObject);
+begin
+        {if Screen.Height < 500 then begin
+                fequipos.Scaled := false;
+                fequipos.PixelsPerInch := 70;
+                fequipos.scaled:= true;
+        end;}
+
+
+end;
+
+end.

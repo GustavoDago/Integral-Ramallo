@@ -1,0 +1,327 @@
+[Closed Files]
+File_0=SourceModule,'C:\Archivos de programa\Borland\Delphi5\Imports\PROPERTYTREELib_TLB.pas',0,1,1,1,1,0,0
+File_1=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\cancelar.sql',0,1,1,1,1,0,0
+File_2=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Cartera.sql',0,1,1,1,1,0,0
+File_3=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Entrega.sql',0,1,1,1,1,0,0
+File_4=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\UniGar.pas',0,1,27,37,100,1,0
+File_5=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\ctrl.pas',0,1,1,50,2,1,1
+File_6=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\wgar.pas',0,1,1,1,1,1,0
+File_7=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\WGAR.DFM',0,1,1,1,1,0,0
+File_8=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\artic.pas',0,1,1,1,1,0,0
+File_9=SourceModule,'C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\localida.pas',0,1,1,1,1,0,0
+
+[Modules]
+Module0=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Compra.pas
+Module1=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Pgrande.dpr
+Module2=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Venta.PAS
+Module3=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Grande.pas
+Module4=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\programa.pas
+Module5=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\consulta.pas
+Module6=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\caja.pas
+Module7=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Recibos.pas
+Module8=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Splash.pas
+Module9=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Orden.pas
+Module10=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\prove.pas
+Count=11
+EditWindowCount=1
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Compra.pas]
+ModuleType=SourceModule
+FormState=1
+FormOnTop=1
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Pgrande.dpr]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Venta.PAS]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Grande.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\programa.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\consulta.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\caja.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Recibos.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Splash.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Orden.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\prove.pas]
+ModuleType=SourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Archivos de programa\Borland\Delphi5\Projects\ProjectGroup1.bpg]
+FormState=0
+FormOnTop=0
+
+[EditWindow0]
+ViewCount=11
+CurrentView=8
+View0=0
+View1=1
+View2=2
+View3=3
+View4=4
+View5=5
+View6=6
+View7=7
+View8=8
+View9=9
+View10=10
+CodeExplorer=CodeExplorer@EditWindow0
+MessageView=MessageView@EditWindow0
+Create=1
+Visible=1
+State=0
+Left=5
+Top=156
+Width=791
+Height=382
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=783
+ClientHeight=353
+LeftPanelSize=0
+RightPanelSize=0
+BottomPanelSize=0
+BottomPanelClients=MessageView@EditWindow0
+BottomPanelData=00000400010000000B0000004D657373616765566965770000000000000000000000000000000000FFFFFFFF
+
+[View0]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\consulta.pas
+CursorX=1
+CursorY=162
+TopLine=153
+LeftCol=1
+
+[View1]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\programa.pas
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+
+[View2]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Recibos.pas
+CursorX=1
+CursorY=336
+TopLine=340
+LeftCol=1
+
+[View3]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Pgrande.dpr
+CursorX=1
+CursorY=21
+TopLine=20
+LeftCol=1
+
+[View4]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Grande.pas
+CursorX=1
+CursorY=55
+TopLine=36
+LeftCol=1
+
+[View5]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Venta.PAS
+CursorX=1
+CursorY=344
+TopLine=339
+LeftCol=1
+
+[View6]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Splash.pas
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+
+[View7]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\prove.pas
+CursorX=1
+CursorY=99
+TopLine=92
+LeftCol=1
+
+[View8]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Compra.pas
+CursorX=51
+CursorY=551
+TopLine=546
+LeftCol=1
+
+[View9]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Orden.pas
+CursorX=1
+CursorY=1
+TopLine=1
+LeftCol=1
+
+[View10]
+Module=C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\caja.pas
+CursorX=1
+CursorY=148
+TopLine=141
+LeftCol=1
+
+[Watches]
+Count=0
+
+[Breakpoints]
+Count=1
+Breakpoint0='C:\Mis documentos\Programación\Delphi - Sistema Integral Ramallo\Venta.PAS',337,'',0,1,'',1,0,0,'',1,'','',''
+
+[AddressBreakpoints]
+Count=0
+
+[Main Window]
+Create=1
+Visible=1
+State=2
+Left=0
+Top=1
+Width=800
+Height=119
+MaxLeft=-1
+MaxTop=-1
+MaxWidth=808
+MaxHeight=119
+ClientWidth=800
+ClientHeight=90
+
+[ProjectManager]
+Create=1
+Visible=0
+State=0
+Left=369
+Top=372
+Width=438
+Height=303
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=430
+ClientHeight=277
+TBDockHeight=303
+LRDockWidth=438
+Dockable=1
+
+[AlignmentPalette]
+Create=1
+Visible=0
+State=0
+Left=200
+Top=107
+Width=156
+Height=84
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=150
+ClientHeight=60
+
+[PropertyInspector]
+Create=1
+Visible=1
+State=0
+Left=0
+Top=0
+Width=219
+Height=402
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=217
+ClientHeight=400
+TBDockHeight=386
+LRDockWidth=190
+Dockable=1
+SplitPos=85
+ArrangeBy=Name
+SelectedItem=Text
+ExpandedItems=Options
+HiddenCategories=Legacy
+ShowStatusBar=1
+
+[CodeExplorer@EditWindow0]
+Create=1
+Visible=1
+State=0
+Left=0
+Top=0
+Width=219
+Height=402
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=219
+ClientHeight=402
+TBDockHeight=305
+LRDockWidth=140
+Dockable=1
+
+[MessageView@EditWindow0]
+Create=1
+Visible=0
+State=0
+Left=12
+Top=0
+Width=771
+Height=87
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=771
+ClientHeight=87
+TBDockHeight=87
+LRDockWidth=443
+Dockable=1
+
+[DockHosts]
+DockHostCount=1
+
+[DockSite0]
+DockSiteType=1
+Create=1
+Visible=1
+State=0
+Left=4
+Top=108
+Width=235
+Height=457
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=227
+ClientHeight=431
+TBDockHeight=314
+LRDockWidth=186
+Dockable=1
+TabPosition=0
+ActiveTab=Object Inspector
+TabDockClients=PropertyInspector,CodeExplorer@EditWindow0
+
